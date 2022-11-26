@@ -8,14 +8,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _isAlwaysShown = true;
-
   bool _showTrackOnHover = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TigerHub Madness' ),
+        title: const Text('TigerHub Madness'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
