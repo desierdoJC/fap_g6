@@ -1,5 +1,7 @@
 # fap_g6
 
+HELLOOOOO LETS GOOO - maru
+
 A new Flutter project.
 
 ## Getting Started
