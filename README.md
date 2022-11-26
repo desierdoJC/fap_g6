@@ -2,7 +2,7 @@
 
 HELLOOOOO LETS GOOO - maru
 
-##CHECKLIST
+## CHECKLIST
 - [ ] Welcome Page (Start shopping button)
 - [ ] Home Screen (pwede magclick ng gustong bilhin)
 - [ ] Add to Cart Button
@@ -10,7 +10,7 @@ HELLOOOOO LETS GOOO - maru
 - [ ] Order confirmation page
 - [ ] QR Code generator?
 
-##GENERAL IDEA
+## GENERAL IDEA
 > welcome page tapos may start shopping na button,
 > then redirect sa shop na parang dito,
 > then pwede magclick ng mga gustong bilhin
