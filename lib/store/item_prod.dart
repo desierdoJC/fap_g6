@@ -10,7 +10,7 @@ class MyItem extends StatelessWidget {
     final color = Colors.primaries[index % Colors.primaries.length];
     final hexRgb = color.shade500.toString().substring(10, 16).toUpperCase();
     return ListTile(
-      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       leading: AspectRatio(
           aspectRatio: 1,
           child: Container(

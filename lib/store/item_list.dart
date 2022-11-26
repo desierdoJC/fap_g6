@@ -32,11 +32,5 @@ class ItemList {
   //Methods
   static final List<ItemList> _itemList =[
       ItemList('PROD1', 'PRODDESC1', 420, 10),
-
   ];
-
-
-
-
-
 }
