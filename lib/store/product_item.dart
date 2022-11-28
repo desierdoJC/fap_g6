@@ -44,15 +44,15 @@ class Product {
   //Methods
   static final List<Product> productList =[
     Product('PROD1', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD2', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
+    Product('PROD2', 'PRODDESC1', 420, 3, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD3', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD4', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
+    Product('PROD4', 'PRODDESC1', 420, 0, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD5', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD6', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD7', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD8', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD9', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD10', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
+    Product('PROD10', 'PRODDESC1', 420, 0, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD11', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD12', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD13', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),

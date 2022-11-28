@@ -48,11 +48,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TigerHub Madness'),
+        title: const Text('TigerHub Madness Store'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+              margin: EdgeInsets.only(left: 10, top: 5),
+              child: Text("Click on a product to add to your cart.")
+          ),
           Expanded(
             child: FutureBuilder<List<Product>>(
                 future: getProducts(),
@@ -71,6 +75,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const Divider(height: 1),
+
+          Container(child: Text("CHECKOUT NOW" + " Items in Your Cart: 1")),
         ],
       ),
     );
