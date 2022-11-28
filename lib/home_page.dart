@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final emptyProduct = Product('','',0, 0,'');
+  List<Product> cartProducts = [];
 
   @override
   void initState() {
@@ -44,18 +45,30 @@ class _HomePageState extends State<HomePage> {
   }
   */
 
+  void addToCart(Product p){
+    setState(() {
+      cartProducts.add(p);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('TigerHub Madness Store'),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: (){},
+          backgroundColor: Colors.green,
+          label: Text('Items: ${cartProducts.length}'),
+          icon: const Icon(Icons.shopping_cart),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-              margin: EdgeInsets.only(left: 10, top: 5),
-              child: Text("Click on a product to add to your cart.")
+              margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+              child: const Text("Click on a product to add to your cart.")
           ),
           Expanded(
             child: FutureBuilder<List<Product>>(
@@ -66,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                     return ListView.builder(
                       itemCount: snapshot.data?.length,
                       itemBuilder: (context, index) =>
-                          ProductTile(item: snapshot.data![index]),
+                          ProductTile(item: snapshot.data![index], add: addToCart),
                     );
                   } else {
                     return const Center(child: CircularProgressIndicator());
@@ -74,9 +87,7 @@ class _HomePageState extends State<HomePage> {
                 }
             ),
           ),
-          const Divider(height: 1),
-
-          Container(child: Text("CHECKOUT NOW" + " Items in Your Cart: 1")),
+          //Container(child: Text("CHECKOUT NOW" + " Items in Your Cart: 1")),
         ],
       ),
     );

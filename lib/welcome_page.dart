@@ -15,7 +15,7 @@ class WelcomePage extends StatelessWidget {
             Center(
               child:Image.asset('lib/images/tgm_logo.png')
             ),
-            const Text('Welcome to Mommy Badet\'s Online Store'),
+            const Text('Welcome to TigerHub Madness Store'),
             TextButton(onPressed: ()=>{
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()))
             }, child: const Text('Start Shopping'),),
