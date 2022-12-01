@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fap_g6/order_confirmation.dart';
 import 'package:fap_g6/store/components/product_tile.dart';
 import 'package:fap_g6/store/product_item.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final emptyProduct = Product('','',0, 0,'');
-  List<Product> cartProducts = [];
+  final List<Product> cartProducts = [];
 
   @override
   void initState() {
@@ -58,7 +59,9 @@ class _HomePageState extends State<HomePage> {
         title: const Text('TigerHub Madness Store'),
       ),
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OrderConPage(cartItems: cartProducts)));
+          },
           backgroundColor: Colors.green,
           label: Text('Items: ${cartProducts.length}'),
           icon: const Icon(Icons.shopping_cart),
@@ -87,7 +90,6 @@ class _HomePageState extends State<HomePage> {
                 }
             ),
           ),
-          //Container(child: Text("CHECKOUT NOW" + " Items in Your Cart: 1")),
         ],
       ),
     );
