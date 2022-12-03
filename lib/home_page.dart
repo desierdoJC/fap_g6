@@ -4,7 +4,6 @@ import 'package:fap_g6/order_confirmation.dart';
 import 'package:fap_g6/store/components/product_tile.dart';
 import 'package:fap_g6/store/product_item.dart';
 import 'package:flutter/material.dart';
-import 'package:fap_g6/store/item_prod.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
@@ -60,7 +59,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OrderConPage(cartItems: cartProducts)));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => OrderConPage(cartItems: cartProducts)));
           },
           backgroundColor: Colors.green,
           label: Text('Items: ${cartProducts.length}'),

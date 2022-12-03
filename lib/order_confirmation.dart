@@ -4,18 +4,30 @@ import 'package:fap_g6/store/components/product_tile.dart';
 import 'package:fap_g6/home_page.dart';
 
 
+class OrderConPage extends StatefulWidget {
+  final List<Product> cartItems;
+  const OrderConPage({Key? key, required this.cartItems}) : super(key: key);
 
-class OrderConPage extends StatelessWidget {
+  @override
+  State<OrderConPage> createState() => _OrderConPageState();
+}
 
-  OrderConPage({required this.cartItems});
+class _OrderConPageState extends State<OrderConPage> {
+  double total = 0.0;
 
- final List<Product> cartItems;
- final double total = 0;
-
-  Future<List<Product>> getCartItems() async {
-    //Kinuha niya yung details from product_item.dart
-    return cartItems;
+  @override
+  void initState(){
+    super.initState();
+    for(Product p in widget.cartItems){
+      total += p.itemPrice;
+    }
   }
+
+  void removeItem(Product p, int index){
+    total -= p.itemPrice;
+    widget.cartItems.removeAt(index);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +39,7 @@ class OrderConPage extends StatelessWidget {
         onPressed: (){
         },
         backgroundColor: Colors.green,
-        label: Text('Checkout Now'),
+        label: const Text('Continue to Checkout'),
         icon: const Icon(Icons.shopping_cart),
       ),
       body: Column(
@@ -38,29 +50,19 @@ class OrderConPage extends StatelessWidget {
               child: const Text("Please review your order before confirming.")
           ),
           Expanded(
-            child: FutureBuilder<List<Product>>(
-                future: getCartItems(),
-                builder: (context,snapshot){
-                  if (snapshot.hasData &&
-                      snapshot.connectionState == ConnectionState.done) {
-                    return ListView.builder(
-                      itemCount: snapshot.data?.length,
-                      itemBuilder: (context, index) =>
-                          ProductTile(item: snapshot.data![index]),
-                    );
-                  } else {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                }
+            child: ListView.builder(
+              itemCount: widget.cartItems.length,
+              itemBuilder: (context, index) =>
+                  ProductTile(item: widget.cartItems[index],deleteIndex: index, delete: removeItem),
             ),
           ),
-          Text("Total:"),
+          Text("Total: Php. $total"),
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
+                primary: Colors.blue,
               ),
-              child: Text('Back to Store'),
+              child: const Text('Back to Store'),
               onPressed: () {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
               },
@@ -70,7 +72,6 @@ class OrderConPage extends StatelessWidget {
       ),
     );
   }
-
-
 }
+
 

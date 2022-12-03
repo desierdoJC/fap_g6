@@ -7,7 +7,7 @@ const kProdTileBorderRadius = 7.0;
 const kProdTileActiveColor = Colors.white70;
 const kProdTileInactiveColor = Colors.grey;
 
-Widget ProductTile({required Product item, Function? add}){
+Widget ProductTile({required Product item, Function? add, Function? delete, int? deleteIndex}){
   bool isActive = stockCheck(item.itemStock);
   return Container(
     margin: const EdgeInsets.all(kProdTileMargin),
@@ -32,7 +32,8 @@ Widget ProductTile({required Product item, Function? add}){
       subtitle: Text('${item.itemPrice} \n In Stock: ${item.itemStock}'),
       trailing: GestureDetector(
         onTap: (){
-          if(isActive) add!(item);
+          if(isActive && add != null) add(item);
+          if(isActive && delete != null) delete(item, deleteIndex);
         },
         child: isActive? Icon(Icons.add) : FittedBox(),
       ),
