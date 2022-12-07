@@ -13,12 +13,25 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child:Image.asset('lib/images/tgm_logo.png')
+              child:Image.asset('lib/images/thm_logo.png')
             ),
-            const Text('Welcome to TigerHub Madness Store'),
             TextButton(onPressed: ()=>{
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()))
-            }, child: const Text('Start Shopping'),),
+            }, child: const Text('Start Shopping',
+                style: TextStyle(
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 22)),),
+          Container(
+            alignment: FractionalOffset.bottomCenter,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.fromLTRB(15,100,15,0),
+            child: Text('Created By: Caringal, De Guia, Desierdo, Pagulayan',
+            style: TextStyle(
+                color: Colors.blueGrey,
+                fontWeight: FontWeight.bold,
+                fontSize: 12)),
+          ),
           ],
         ),
       ),

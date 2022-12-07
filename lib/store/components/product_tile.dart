@@ -9,6 +9,7 @@ const kProdTileInactiveColor = Colors.grey;
 
 Widget ProductTile({required Product item, Function? add, Function? delete, int? deleteIndex}){
   bool isActive = stockCheck(item.itemStock);
+  bool isDelete = delete!=null? true : false;
   return Container(
     margin: const EdgeInsets.all(kProdTileMargin),
     decoration: BoxDecoration(
@@ -35,7 +36,7 @@ Widget ProductTile({required Product item, Function? add, Function? delete, int?
           if(isActive && add != null) add(item);
           if(isActive && delete != null) delete(item, deleteIndex);
         },
-        child: isActive? Icon(Icons.add) : FittedBox(),
+        child: isActive? Icon(Icons.add): FittedBox()
       ),
     ),
   );

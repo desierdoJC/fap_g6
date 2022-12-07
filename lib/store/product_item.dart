@@ -54,7 +54,7 @@ class Product {
     Product('Pants', 'Insert description',15, 250, 'https://storage.sg.content-cdn.io/cdn-cgi/image/width=542,height=723,quality=75,format=auto,fit=cover,g=top/in-resources/21e9ae3c-de72-4391-9c4a-c7af58447630/Images/ProductImages/Source/levis-mens-xx-chino-ezwaist-taper-pants-A10410035_01_Front.jpg'),
     Product('Totes and bags','Insert Desc', 5, 600, 'https://media.gq.com/photos/5ceeea351f8a4ee9adddadc4/16:9/w_2560%2Cc_limit/TotesLede3.jpg'),
     Product('Mugs', 'Insert description', 4, 1000,'https://images.summitmedia-digital.com/yummyph/images/2020/08/14/homescapes2.jpg'),
-    Product('PROD12', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
+    Product('PROD12', 'PRODDESC1', 420, 0, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD13', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD14', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD15', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),

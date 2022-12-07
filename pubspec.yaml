@@ -30,3 +30,4 @@ flutter:
 
   assets:
     - lib/images/tgm_logo.png
+    - lib/images/thm_logo.png

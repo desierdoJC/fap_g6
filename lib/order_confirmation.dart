@@ -33,7 +33,7 @@ class _OrderConPageState extends State<OrderConPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TigerHub Madness Store'),
+        title: const Text('THM Order Confirmation'),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
@@ -57,17 +57,7 @@ class _OrderConPageState extends State<OrderConPage> {
             ),
           ),
           Text("Total: Php. $total"),
-          Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-              ),
-              child: const Text('Back to Store'),
-              onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
-              },
-            ),
-          ),
+
         ],
       ),
     );
