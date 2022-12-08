@@ -44,25 +44,53 @@ class _CheckoutPageState extends State<CheckoutPage> {
       appBar: AppBar(
         title: Header(headerText: 'Checkout'),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: (){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+        },
+        backgroundColor: Colors.green,
+        label: Text('Create New Order!'),
+        icon: const Icon(Icons.shopping_cart),
+      ),
       body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
                 margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                child: const Text("Thank you for shopping at THM!",
+                  style: TextStyle(
+                    color: Color(0XFF1378EC),
+                    fontSize: 21,
+                  ),),
+            ),
+            Container(
+                margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                 child: const Text("Your order has been processed.")
             ),
-            QrImage(
-              data: orderList.toString(),
-              version: QrVersions.auto,
-              size: 200.0,
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0XFF57C1D8),
+                border: Border.all(
+                  width: 5,
+                ),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: QrImage(
+                data: orderList.toString(),
+                version: QrVersions.auto,
+                size: 200.0,
+              ),
             ),
             const SizedBox(height: 3,),
-            Text("Total: Php. ${widget.total}"),
-            TextButton(onPressed: (){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
-             }, child: const Text('Back to store'))
+            Text("Please scan this QR Code for your receipt."),
+            const SizedBox(height: 10,),
+            Text("Order Total: Php. ${widget.total}",
+            style: const TextStyle(
+              color: Color(0XFF1378EC),
+              fontSize: 21,
+            ),),
+
           ],
         ),
       ),
