@@ -4,6 +4,7 @@ import 'package:fap_g6/order_confirmation.dart';
 import 'package:fap_g6/store/components/product_tile.dart';
 import 'package:fap_g6/store/product_item.dart';
 import 'package:flutter/material.dart';
+import 'package:fap_g6/app_title.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
@@ -54,9 +55,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('TigerHub Madness Store'),
-      ),
+        appBar: AppBar(
+          title: Header(headerImagePath: 'lib/images/thm_logoFinal.png', headerText: 'TigerHub Madness Store')
+        ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => OrderConPage(cartItems: cartProducts)));

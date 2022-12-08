@@ -41,7 +41,7 @@ class Product {
         data['thumbnail']);
   }
 
-  //Methods
+
   static final List<Product> productList =[
     Product('CLAYMASK', 'CLAYMASK', 80, 50, 'https://ph-test-11.slatic.net/p/70eb27d50c37254f4cdbf40a0160bc68.jpg'),
     Product('LOTIONS', 'LOTIONS', 100, 80, 'https://www.aveeno.com.ph/sites/aveeno_ph_2/files/styles/product_image/public/product-images/aveeno-daily-moisturizing-lotion-354ml.jpg'),
@@ -58,13 +58,5 @@ class Product {
     Product('PROD13', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD14', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
     Product('PROD15', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD16', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD17', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD18', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD19', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD20', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD21', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD22', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
-    Product('PROD23', 'PRODDESC1', 420, 10, 'https://contents.mediadecathlon.com/p1985538/6857946ffb8dd831ed1aec6281115426/p1985538.jpg'),
   ];
 }

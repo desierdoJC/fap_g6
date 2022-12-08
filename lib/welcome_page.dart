@@ -13,7 +13,7 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child:Image.asset('lib/images/thm_logo.png')
+              child:Image.asset('lib/images/thm_logoFinal.png')
             ),
             TextButton(onPressed: ()=>{
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()))
