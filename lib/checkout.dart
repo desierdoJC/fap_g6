@@ -24,15 +24,20 @@ class _CheckoutPageState extends State<CheckoutPage> {
   @override
   void initState(){
     super.initState();
-    StringBuffer orderList = new StringBuffer();
     for(Product p in widget.orderItems){
       print('Item: '+ p.itemName.toString());
       print('Stock Before: ' + p.itemStock.toString());
       p.itemStock--;
       print('Stock After: ' + p.itemStock.toString());
 
-
     }
+  }
+
+  String createOrderList(){
+    StringBuffer orderList = StringBuffer();
+    orderList.writeAll(widget.orderItems, '\n');
+
+    return orderList.toString();
   }
 
   @override
@@ -49,7 +54,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               child: const Text("Your order has been Processed.")
           ),
           QrImage(
-            data: widget.orderItems.join("\n") + '\nTotal: '+ widget.total.toString(),
+            data: '${createOrderList()}\nTotal: ${widget.total}',
             version: QrVersions.auto,
             size: 200.0,
           ),
