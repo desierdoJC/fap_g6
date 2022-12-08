@@ -2,10 +2,10 @@
 
 ## CHECKLIST
 - [x] Welcome Page (Start shopping button)
-- [ ] Home Screen (pwede magclick ng gustong bilhin)
-- [ ] Add to Cart Button
-- [ ] Checkout button
-- [ ] Order confirmation page
+- [x] Home Screen (pwede magclick ng gustong bilhin)
+- [x] Add to Cart Button
+- [x] Checkout button
+- [x] Order confirmation page
 - [ ] QR Code generator?
 
 ## GENERAL IDEA
