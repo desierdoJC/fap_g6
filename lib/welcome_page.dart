@@ -24,9 +24,9 @@ class WelcomePage extends StatelessWidget {
                 fontSize: 22)),),
           Container(
             alignment: FractionalOffset.bottomCenter,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.fromLTRB(15,100,15,0),
-            child: Text('Created By: Caringal, De Guia, Desierdo, Pagulayan',
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.fromLTRB(15,100,15,0),
+            child: const Text('Created By: Caringal, De Guia, Desierdo, Pagulayan',
             style: TextStyle(
                 color: Colors.blueGrey,
                 fontWeight: FontWeight.bold,

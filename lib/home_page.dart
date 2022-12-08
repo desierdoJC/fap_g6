@@ -52,15 +52,21 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void removeCartItem(int index){
+    setState(() {
+      cartProducts.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Header(headerImagePath: 'lib/images/thm_logoFinal.png', headerText: 'TigerHub Madness Store')
+          title: Header(headerText: 'TigerHub Madness Store')
         ),
       floatingActionButton: FloatingActionButton.extended(
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => OrderConPage(cartItems: cartProducts)));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => OrderConPage(cartItems: cartProducts, removeCartItem: removeCartItem,)));
           },
           backgroundColor: Colors.green,
           label: Text('Items: ${cartProducts.length}'),

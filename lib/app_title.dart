@@ -1,17 +1,16 @@
+import 'package:fap_g6/store/components/const.dart';
 import 'package:flutter/material.dart';
 
-
-
-Widget Header({required String headerImagePath, required String headerText }){
+Widget Header({required String headerText }){
   return Row(
     children: [
       Image.asset(
-        headerImagePath,
+        headerURL,
         fit: BoxFit.contain,
         height: 70,
+        color: Colors.black,
       ),
-      Container(
-          padding: const EdgeInsets.all(8.0), child: Text(headerText))
+      Text(headerText)
     ],
 
   );

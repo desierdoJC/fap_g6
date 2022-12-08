@@ -6,7 +6,12 @@
 - [x] Add to Cart Button
 - [x] Checkout button
 - [x] Order confirmation page
-- [ ] QR Code generator?
+- [x] QR Code generator?
+
+## CURRENT ISSUES
+- [ ] Stock qty not updating after checkout
+- [ ] App bar has back button in checkout page
+- [ ] "Back to Home" button in checkout page pushes HomePage but still allows back button 
 
 ## GENERAL IDEA
 > welcome page tapos may start shopping na button,

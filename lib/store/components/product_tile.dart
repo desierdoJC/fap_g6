@@ -30,13 +30,13 @@ Widget ProductTile({required Product item, Function? add, Function? delete, int?
           aspectRatio: 1,
           child: Image.network(item.url)),
       title: Text(item.itemName),
-      subtitle: Text('${item.itemPrice} \n In Stock: ${item.itemStock}'),
+      subtitle: Text('Php. ${item.itemPrice} \n In Stock: ${item.itemStock}'),
       trailing: GestureDetector(
         onTap: (){
           if(isActive && add != null) add(item);
-          if(isActive && delete != null) delete(item, deleteIndex);
+          if(isActive && delete != null) delete();
         },
-        child: isActive? Icon(Icons.add): FittedBox()
+        child: isActive? delete != null? const Icon(Icons.delete): const Icon(Icons.add) : const FittedBox()
       ),
     ),
   );

@@ -8,7 +8,8 @@ import 'package:fap_g6/home_page.dart';
 
 class OrderConPage extends StatefulWidget {
   final List<Product> cartItems;
-  const OrderConPage({Key? key, required this.cartItems}) : super(key: key);
+  final Function removeCartItem;
+  const OrderConPage({Key? key, required this.cartItems, required this.removeCartItem}) : super(key: key);
 
   @override
   State<OrderConPage> createState() => _OrderConPageState();
@@ -27,7 +28,9 @@ class _OrderConPageState extends State<OrderConPage> {
 
   void removeItem(Product p, int index){
     total -= p.itemPrice;
-    widget.cartItems.removeAt(index);
+    setState(() {
+      widget.removeCartItem(index);
+    });
   }
 
 
@@ -35,11 +38,11 @@ class _OrderConPageState extends State<OrderConPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Header(headerImagePath: 'lib/images/thm_logoFinal.png', headerText: 'Order Confirmation'),
+        title: Header(headerText: 'Order Confirmation'),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: widget.cartItems.isEmpty? const SizedBox(): FloatingActionButton.extended(
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => CheckoutPage(total: total, orderItems: widget.cartItems)));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => CheckoutPage(total: total, orderItems: widget.cartItems)));
         },
         backgroundColor: Colors.green,
         label: const Text('Continue to Checkout'),
@@ -56,7 +59,7 @@ class _OrderConPageState extends State<OrderConPage> {
             child: ListView.builder(
               itemCount: widget.cartItems.length,
               itemBuilder: (context, index) =>
-                  ProductTile(item: widget.cartItems[index],deleteIndex: index, delete: removeItem),
+                  ProductTile(item: widget.cartItems[index],deleteIndex: index, delete: (){removeItem(widget.cartItems[index], index);}),
             ),
           ),
           Text("Total: Php. $total"),

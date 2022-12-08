@@ -18,49 +18,53 @@ class CheckoutPage extends StatefulWidget {
 
 
 class _CheckoutPageState extends State<CheckoutPage> {
+  StringBuffer orderList = StringBuffer();
 
-  //Order Confirmed, Remove Stock for Each Item
-  // Tinetest ko pa lang HAHA
   @override
   void initState(){
     super.initState();
-    for(Product p in widget.orderItems){
-      print('Item: '+ p.itemName.toString());
-      print('Stock Before: ' + p.itemStock.toString());
-      p.itemStock--;
-      print('Stock After: ' + p.itemStock.toString());
-
-    }
+    listToJSON();
   }
 
-  String createOrderList(){
-    StringBuffer orderList = StringBuffer();
-    orderList.writeAll(widget.orderItems, '\n');
-
-    return orderList.toString();
+  void listToJSON(){
+    orderList.write('{"items":[');
+    for(int i = 0; i<widget.orderItems.length; i++){
+      if (i+1 != widget.orderItems.length ) {
+        orderList.write('{"name":"${widget.orderItems[i].itemName}","price":"${widget.orderItems[i].itemPrice}"},');
+      } else {
+        orderList.write('{"name":"${widget.orderItems[i].itemName}","price":"${widget.orderItems[i].itemPrice}"}');
+      }
+    }
+    orderList.write('],"total":"${widget.total}"}');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Header(headerImagePath: 'lib/images/thm_logoFinal.png', headerText: 'Checkout'),
+        title: Header(headerText: 'Checkout'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-              margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-              child: const Text("Your order has been Processed.")
-          ),
-          QrImage(
-            data: '${createOrderList()}\nTotal: ${widget.total}',
-            version: QrVersions.auto,
-            size: 200.0,
-          ),
-          Text("Total: Php. ${widget.total}"),
-
-        ],
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+                margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                child: const Text("Your order has been processed.")
+            ),
+            QrImage(
+              data: orderList.toString(),
+              version: QrVersions.auto,
+              size: 200.0,
+            ),
+            const SizedBox(height: 3,),
+            Text("Total: Php. ${widget.total}"),
+            TextButton(onPressed: (){
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+             }, child: const Text('Back to store'))
+          ],
+        ),
       ),
     );
   }
