@@ -31,6 +31,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
   void listToJSON(){
     orderList.write('{"items":[');
     for(int i = 0; i<widget.orderItems.length; i++){
+
       if (i+1 != widget.orderItems.length ) {
         orderList.write('{"name":"${widget.orderItems[i].itemName}","price":"${widget.orderItems[i].itemPrice}"},');
       } else {

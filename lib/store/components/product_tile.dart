@@ -29,7 +29,7 @@ Widget ProductTile({required Product item, Function? add, Function? delete, int?
           aspectRatio: 1,
           child: Image.network(item.url)),
       title: Text(item.itemName),
-      subtitle: Text('Php. ${item.itemPrice} \nIn Stock: ${item.itemStock}'),
+      subtitle: Text('Php. ${item.itemPrice} \nIn Stock: ${item.itemStock} \n${item.itemDesc}'),
       trailing: GestureDetector(
         onTap: (){
           if(isActive && add != null) add(item);
