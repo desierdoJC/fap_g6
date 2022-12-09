@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final emptyProduct = Product('','',0, 0,'');
   final List<Product> cartProducts = [];
 
   @override
@@ -21,30 +20,11 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  T? tryCast<T>(dynamic value, {T? fallback}) {
-    try {
-      return (value as T);
-    } on TypeError catch (_) {
-      return fallback;
-    }
-  }
-
   Future<List<Product>> getProducts() async {
-    //Kinuha niya yung details from product_item.dart
+    //Get product details from product_item.dart
     List<Product> products = Product.productList;
     return products;
   }
-
-  /* Di ko pa mapagana hehe
-  Future<List<Product>> getProducts() async {
-    List<Product> products = [];
-    final response = await http.get(Uri.parse('https://dummyjson.com/products'));
-    Map<String,List> data = Map.castFrom(json.decode(response.body));
-    List<Map<String,dynamic>> pd = List.castFrom(data['products']??[]);
-    products = pd.map((e) => Product.fromJSON(Map.castFrom(e))).toList();
-    return products;
-  }
-  */
 
   void addToCart(Product p){
     setState(() {

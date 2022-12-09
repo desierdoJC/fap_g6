@@ -1,4 +1,4 @@
-import 'package:fap_g6/store/components/const.dart';
+import 'package:fap_g6/const.dart';
 import 'package:flutter/material.dart';
 
 Widget Header({required String headerText }){
@@ -7,11 +7,11 @@ Widget Header({required String headerText }){
       Image.asset(
         headerURL,
         fit: BoxFit.contain,
-        height: 70,
-        color: Colors.black,
+        height: 50,
+        color: Colors.white,
       ),
-      Text(headerText)
+      const SizedBox(width: 10,),
+      Text(headerText, style: const TextStyle(fontWeight: FontWeight.bold),)
     ],
-
   );
 }

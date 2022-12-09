@@ -10,8 +10,8 @@
 
 ## CURRENT ISSUES
 - [ ] Stock qty not updating after checkout
-- [ ] App bar has back button in checkout page
-- [ ] "Back to Home" button in checkout page pushes HomePage but still allows back button 
+- [x] App bar has back button in checkout page
+- [x] "Back to Home" button in checkout page pushes HomePage but still allows back button 
 
 ## GENERAL IDEA
 > welcome page tapos may start shopping na button,

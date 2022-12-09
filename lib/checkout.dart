@@ -1,8 +1,10 @@
+import 'package:fap_g6/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fap_g6/app_title.dart';
 import 'package:fap_g6/store/product_item.dart';
 import 'package:fap_g6/store/components/product_tile.dart';
 import 'package:fap_g6/home_page.dart';
+import 'package:get/get.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 
@@ -44,14 +46,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
       appBar: AppBar(
         title: Header(headerText: 'Checkout'),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
-        },
-        backgroundColor: Colors.green,
-        label: Text('Create New Order!'),
-        icon: const Icon(Icons.shopping_cart),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -83,14 +77,15 @@ class _CheckoutPageState extends State<CheckoutPage> {
               ),
             ),
             const SizedBox(height: 3,),
-            Text("Please scan this QR Code for your receipt."),
+            const Text("Please scan this QR Code for your receipt."),
             const SizedBox(height: 10,),
             Text("Order Total: Php. ${widget.total}",
             style: const TextStyle(
               color: Color(0XFF1378EC),
               fontSize: 21,
             ),),
-
+            const SizedBox(height: 10,),
+            ElevatedButton(onPressed: ()=>Get.offAll(HomePage()), style:ElevatedButton.styleFrom(primary: Colors.green), child: const Text('Create new order'))
           ],
         ),
       ),

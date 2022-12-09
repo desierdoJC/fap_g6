@@ -9,7 +9,6 @@ const kProdTileInactiveColor = Colors.grey;
 
 Widget ProductTile({required Product item, Function? add, Function? delete, int? deleteIndex}){
   bool isActive = stockCheck(item.itemStock);
-  bool isDelete = delete!=null? true : false;
   return Container(
     margin: const EdgeInsets.all(kProdTileMargin),
     decoration: BoxDecoration(
@@ -30,7 +29,7 @@ Widget ProductTile({required Product item, Function? add, Function? delete, int?
           aspectRatio: 1,
           child: Image.network(item.url)),
       title: Text(item.itemName),
-      subtitle: Text('Php. ${item.itemPrice} \n In Stock: ${item.itemStock}'),
+      subtitle: Text('Php. ${item.itemPrice} \nIn Stock: ${item.itemStock}'),
       trailing: GestureDetector(
         onTap: (){
           if(isActive && add != null) add(item);

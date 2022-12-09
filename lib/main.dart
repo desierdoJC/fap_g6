@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'welcome_page.dart';
 
 
@@ -10,11 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'TigerHub Madness Store',
       theme: ThemeData(
         primaryColor: Colors.white,
-        scaffoldBackgroundColor: Color(0XFFE8DFDF),
+        scaffoldBackgroundColor: const Color(0XFFE8DFDF),
+        fontFamily: 'Inter',
+        appBarTheme: const AppBarTheme(backgroundColor: Color(0XFF278CAA), foregroundColor: Colors.white, elevation: 0),
       ),
       debugShowCheckedModeBanner: false,
       home: const WelcomePage(),

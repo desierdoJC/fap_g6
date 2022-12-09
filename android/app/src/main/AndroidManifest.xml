@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fap_g6">
    <application
-        android:label="fap_g6"
+        android:label="TigerHub Madness"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
