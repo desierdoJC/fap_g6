@@ -50,7 +50,7 @@ class Product {
     Product('Clay Mask', 'It is a chemical exfoliator for the face to rejuvenate.', 80, 50, 'https://ph-test-11.slatic.net/p/70eb27d50c37254f4cdbf40a0160bc68.jpg'),
     Product('Lotions', 'Used for moisturizing the skin.', 100, 80, 'https://www.aveeno.com.ph/sites/aveeno_ph_2/files/styles/product_image/public/product-images/aveeno-daily-moisturizing-lotion-354ml.jpg'),
     Product('Jump Ropes', 'A great use for exercises to improve endurance.', 100, 30, 'https://pyxis.nymag.com/v1/imgs/920/e12/99a414943d94f12cc74426189a4938e92e.2x.rsquare.w600.jpg'),
-    Product('Dumbbells', 'Used for Workouts and exercises can be used in or outdoors', 450, 20, 'https://cdn.shopify.com/s/files/1/0564/1283/1950/collections/1W9A3573_1_1_1400x.jpg?v=1621515174'),
+    Product('Dumbbells', 'Used for Workouts and exercises can be used in or outdoors', 450, 0, 'https://cdn.shopify.com/s/files/1/0564/1283/1950/collections/1W9A3573_1_1_1400x.jpg?v=1621515174'),
     Product('Hydro Flask', 'A water bottle that is designed to keep your water cold or warm for a long period of time', 50, 100, 'https://www.insidehook.com/wp-content/uploads/2021/04/hydroflask1.jpg?fit=1500%2C1000'),
     Product('Yoga mats', 'Can be used at home outside and even anywhere.', 45, 150, 'https://www.sportsmnl.com/wp-content/uploads/2020/10/6714-1-450x450-1.jpg'),
     Product('Phone cases', 'Designed to protect your phone but also follows a trend of designs.', 20, 500, 'https://lzd-img-global.slatic.net/g/p/e00de8fcf6b6d92d27e3288c5402b927.jpg_2200x2200q80.jpg_.webp'),
